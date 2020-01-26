@@ -56,14 +56,14 @@ class DetailView extends Component{
         const { navigation } = this.props;
         return (
           <View style={styles.container}>
-        <Image source={{ uri: navigation.getParam('image_url') }} style={styles.photo} />
-        <View style={styles.container_text}>
-            <Text style={styles.title}>
-                Title : {JSON.stringify(navigation.getParam('title'))}
-            </Text>
-            <Text style={styles.description}>
-                Description : {JSON.stringify(navigation.getParam('description'))}
-            </Text>
+            <Image source={{ uri: navigation.getParam('image_url') }} style={styles.photo} />
+            <View style={styles.container_text}>
+                <Text style={styles.title}>
+                    Title : {JSON.stringify(navigation.getParam('title'))}
+                </Text>
+                <Text style={styles.description}>
+                    Description : {JSON.stringify(navigation.getParam('description'))}
+                </Text>
         </View>
 
     </View>

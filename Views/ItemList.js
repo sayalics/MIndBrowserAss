@@ -95,6 +95,7 @@ class ItemList extends Component {
   }
 
   componentDidMount() {
+    //get data from giphy api
     fetch("https://api.giphy.com/v1/stickers/search?api_key=YuZsXS1zx5RtU1awkyS1WFN09OPLv8dJ&limit=100&q=cat", {
       "method": "GET",
       "headers": {
@@ -110,9 +111,6 @@ class ItemList extends Component {
             fullData: result.data
           });
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
           this.setState({
             isLoading: true,
@@ -123,6 +121,7 @@ class ItemList extends Component {
   }
 
   search = (searchText) => {
+    //filtering search data from fulldata
     this.setState({searchText: searchText});
   
     let filteredData = this.state.data.filter(function (item) {
@@ -134,6 +133,7 @@ class ItemList extends Component {
   
 
   renderHeader = () => {
+    //searchbar to search or filter list
     return <SearchBar
     round
     lightTheme={true}
@@ -146,6 +146,7 @@ class ItemList extends Component {
   };
 
   renderFooter = () => {
+    //Setting loadmore activityindicator
     return (       
       <View>
               {
@@ -185,11 +186,13 @@ class ItemList extends Component {
     }
  
         return(
-          
+          //load view when getdata
           <View style={styles.container}>
                 <FlatList
                   data={this.state.filteredData && this.state.filteredData.length > 0 ? this.state.filteredData : this.state.data}
-                  renderItem={({ item }) => <TouchableOpacity onPress={() => this.props.navigation.navigate('DetailView',{
+                  renderItem={({ item }) => 
+                        <TouchableOpacity 
+                        onPress={() => this.props.navigation.navigate('DetailView',{   //pasing params through props navigation
                           title: item.title,
                           description: item.slug,
                           image_url: item.images.downsized_still.url

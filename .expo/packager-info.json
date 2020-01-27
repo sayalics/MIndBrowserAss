@@ -1,9 +1,10 @@
 {
-  "devToolsPort": 19003,
-  "expoServerPort": 19004,
-  "packagerPort": 19005,
-  "packagerPid": 8867,
-  "expoServerNgrokUrl": "https://mj-3vt.anonymous.mindbrowserass.exp.direct",
-  "packagerNgrokUrl": "https://packager.mj-3vt.anonymous.mindbrowserass.exp.direct",
-  "ngrokPid": 9388
+  "devToolsPort": 19002,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+  "webpackServerPort": null
 }
